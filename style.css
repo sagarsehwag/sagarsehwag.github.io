@@ -1,10 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 
+* {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.rem;
+}
+
 body {
   font-family: 'Raleway', sans-serif;
   height: 100vh;
-  /* background: #333 url('images/programmer.png') no-repeat center center / cover; */
-  /* background: #333 url('images/whoops.jpg') no-repeat center center / cover; */
+  /* background: #333 url('images/landingBG.jpg') no-repeat center center / cover; */
   background-color: rgba(161, 11, 11, 0.8);
   background-color: #c62828;
   color: #fff;
