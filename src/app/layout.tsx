@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://sagarsehwag.github.io'),
   title: 'Sagar Sehwag',
   description:
-    'A Software Engineer specializing in the development of scalable web applications using React, TypeScript, and a strong commitment to long term engineering quality. I enjoy experimenting with Golang as well.',
+    'A Software Engineer specializing in the development of scalable web applications using React, TypeScript, and a strong commitment to long term engineering quality.',
   openGraph: {
     title: 'Sagar Sehwag',
     description:
-      'A Software Engineer specializing in the development of scalable web applications using React, TypeScript, and a strong commitment to long term engineering quality. I enjoy experimenting with Golang as well.',
+      'A Software Engineer specializing in the development of scalable web applications using React, TypeScript, and a strong commitment to long term engineering quality.',
     images: [
       {
         url: '/og-image.png',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Sagar Sehwag',
     description:
-      'A Software Engineer specializing in the development of scalable web applications using React, TypeScript, and a strong commitment to long term engineering quality. I enjoy experimenting with Golang as well.',
+      'A Software Engineer specializing in the development of scalable web applications using React, TypeScript, and a strong commitment to long term engineering quality.',
     images: ['/og-image.png'],
   },
 };

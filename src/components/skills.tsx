@@ -56,14 +56,14 @@ export function Skills() {
       <div className="space-y-5">
         {skillGroups.map((group) => (
           <div key={group.category} className="space-y-2.5">
-            <h3 className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
               {group.category}
             </h3>
             <div className="flex flex-wrap gap-1.5">
               {group.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="border border-border bg-secondary px-2 py-0.5 text-[11px] text-secondary-foreground"
+                  className="border border-border bg-secondary px-2 py-0.5 text-xs text-secondary-foreground"
                 >
                   {skill}
                 </span>
