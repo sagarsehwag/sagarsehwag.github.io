@@ -1,27 +1,42 @@
-import { Star, GitFork } from "lucide-react";
+"use client";
+
+import { Star, GitFork, Play } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { useState } from "react";
 
 const projects = [
   {
-    name: "Simpplr Editor",
+    name: "Content Studio - Simpplr Editor",
     description:
-      "A rich text editor built on Tiptap with a wide range of extensions that can be easily enabled or disabled using feature flags. Used for creating feeds, blogs, pages, and event pages.",
+      "Content Studio is a modern, block-based editor for creating pages, offering drag-and-drop layouts, auto-save, and improved performance. Built on Tiptap, it supports feature-flagged extensions and is used to create feeds, blogs, pages, and event pages.",
     tags: ["React", "TypeScript", "Tiptap", "Editor", "Vanilla JavaScript"],
     primaryLanguage: "TypeScript",
     languageColor: "#3178c6",
     stars: 0,
     forks: 0,
     url: "https://simpplr.github.io/tiptap/@simpplr/athena-tiptap/index.html",
+    demoUrl:
+      "https://simpplr.github.io/tiptap/@simpplr/athena-tiptap/index.html",
+    videoUrl:
+      "https://drive.google.com/file/d/111vowwwOIX4U2DBHNBal4LUIvEusMAuM/preview",
   },
   {
     name: "Rich Text Editor — System Design",
     description:
       "Interactive visual demos explaining how rich text editors work under the hood — rendering, contentEditable, Selection API, state models, update loops, and node data structures. Built from scratch with zero external UI libraries.",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "System Design"],
+    tags: ["Next.js", "React", "TypeScript", "Tailwind", "System Design"],
     primaryLanguage: "TypeScript",
     languageColor: "#3178c6",
     stars: 0,
     forks: 0,
     url: "https://sagarsehwag.github.io/rich-text-editor-system-design/",
+    demoUrl: "https://sagarsehwag.github.io/rich-text-editor-system-design/",
   },
   {
     name: "Pluralsight Downloader",
@@ -37,17 +52,26 @@ const projects = [
 ];
 
 export function Projects() {
+  const [demoProject, setDemoProject] = useState<
+    (typeof projects)[number] | null
+  >(null);
+
   return (
     <section className="pt-8 pb-4 sm:pt-12 sm:pb-6">
-      <h2 className="text-xl font-semibold tracking-wide sm:text-2xl">Projects</h2>
+      <h2 className="text-xl font-semibold tracking-wide sm:text-2xl">
+        Projects
+      </h2>
 
       <ul>
         {projects.map((project) => (
-          <li key={project.name} className="border border-border bg-card my-4 sm:my-6">
+          <li
+            key={project.name}
+            className="border border-border bg-card my-4 sm:my-6"
+          >
             <div className="space-y-3 p-4 sm:space-y-4 sm:p-6">
               {/* Header Section */}
-              <div className="flex flex-col items-start justify-between">
-                <div className="flex-1 w-full">
+              <div className="flex flex-col items-start justify-between gap-1.5">
+                <div className="flex w-full items-center gap-2">
                   <a
                     href={project.url}
                     target="_blank"
@@ -56,8 +80,19 @@ export function Projects() {
                   >
                     <h3 className="text-xl font-semibold">{project.name}</h3>
                   </a>
+                  {project.demoUrl && (
+                    <button
+                      onClick={() => setDemoProject(project)}
+                      className="inline-flex cursor-pointer items-center justify-center rounded-full border border-input p-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                      title="View demo"
+                    >
+                      <Play className="h-3.5 w-3.5" />
+                    </button>
+                  )}
                 </div>
-                <p className="text-xs leading-relaxed sm:text-sm">{project.description}</p>
+                <p className="text-xs leading-relaxed sm:text-sm">
+                  {project.description}
+                </p>
               </div>
 
               {/* Technology Tags */}
@@ -96,6 +131,45 @@ export function Projects() {
           </li>
         ))}
       </ul>
+
+      <Dialog
+        open={!!demoProject}
+        onOpenChange={(open) => !open && setDemoProject(null)}
+      >
+        <DialogContent className="flex h-[85vh] max-w-4xl flex-col gap-0 p-0 lg:max-w-5xl xl:max-w-6xl">
+          <DialogHeader className="flex-none border-b px-4 py-3">
+            <div className="flex items-center justify-between pr-8">
+              <div>
+                <DialogTitle className="text-base leading-normal">
+                  {demoProject?.name}
+                </DialogTitle>
+                <DialogDescription className="sr-only">
+                  Live demo of {demoProject?.name}
+                </DialogDescription>
+              </div>
+            </div>
+          </DialogHeader>
+          <div className="min-h-0 flex-1 p-4">
+            {demoProject?.videoUrl ? (
+              <iframe
+                src={demoProject.videoUrl}
+                className="h-full w-full rounded border"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                title={`${demoProject.name} Demo`}
+              />
+            ) : (
+              demoProject?.demoUrl && (
+                <iframe
+                  src={demoProject.demoUrl}
+                  className="h-full w-full rounded border"
+                  title={`${demoProject.name} Demo`}
+                />
+              )
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

@@ -22,7 +22,7 @@ const socials = [
   {
     name: "Phone",
     linkTitle: "+91 8800343531",
-    href: "tel:+918800343531",
+    href: "https://wa.me/918800343531",
     icon: Phone,
   },
 ];
