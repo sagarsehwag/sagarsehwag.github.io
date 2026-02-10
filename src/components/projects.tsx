@@ -137,7 +137,7 @@ export function Projects() {
         open={!!demoProject}
         onOpenChange={(open) => !open && setDemoProject(null)}
       >
-        <DialogContent className='flex h-[85vh] max-w-4xl flex-col gap-0 p-0 lg:max-w-5xl xl:max-w-6xl'>
+        <DialogContent className='flex h-[85vh] max-w-5xl flex-col gap-0 p-0 lg:max-w-6xl xl:max-w-7xl'>
           <DialogHeader className='flex-none border-b px-4 py-3'>
             <div className='flex items-center justify-between pr-8'>
               <div>
