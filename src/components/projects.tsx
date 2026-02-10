@@ -78,7 +78,7 @@ export function Projects() {
                     rel='noopener noreferrer'
                     className='hover:underline'
                   >
-                    <h3 className='text-xl font-semibold'>{project.name}</h3>
+                    <h3 className='text-base font-semibold sm:text-lg'>{project.name}</h3>
                   </a>
                   {project.demoUrl && (
                     <button
