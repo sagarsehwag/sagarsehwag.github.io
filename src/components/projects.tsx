@@ -27,13 +27,13 @@ const projects = [
 
 export function Projects() {
   return (
-    <section className="pt-12 pb-6">
-      <h2 className="text-2xl font-semibold tracking-wide">Projects</h2>
+    <section className="pt-8 pb-4 sm:pt-12 sm:pb-6">
+      <h2 className="text-xl font-semibold tracking-wide sm:text-2xl">Projects</h2>
 
       <ul>
         {projects.map((project) => (
-          <li key={project.name} className="border border-border bg-card my-6">
-            <div className="space-y-4 p-6">
+          <li key={project.name} className="border border-border bg-card my-4 sm:my-6">
+            <div className="space-y-3 p-4 sm:space-y-4 sm:p-6">
               {/* Header Section */}
               <div className="flex flex-col items-start justify-between">
                 <div className="flex-1 w-full">
@@ -46,7 +46,7 @@ export function Projects() {
                     <h3 className="text-xl font-semibold">{project.name}</h3>
                   </a>
                 </div>
-                <p className="text-sm leading-relaxed">{project.description}</p>
+                <p className="text-xs leading-relaxed sm:text-sm">{project.description}</p>
               </div>
 
               {/* Technology Tags */}

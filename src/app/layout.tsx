@@ -25,13 +25,13 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <header className="sticky top-0 z-50 w-full">
-            <div className="mx-auto max-w-3xl border-b border-border bg-background">
+            <div className="mx-auto max-w-3xl border-b border-border bg-background px-4 sm:px-6">
               <div className="flex h-14 items-center justify-between">
                 <div className="flex items-center">
                   <a href="/" className="flex items-center gap-x-2">
-                    <Terminal className="size-8 lg:size-6" />
+                    <Terminal className="size-6" />
                     <div className="flex items-center justify-center">
-                      <span className="text-3xl">SS</span>
+                      <span className="text-2xl sm:text-3xl">SS</span>
                     </div>
                   </a>
                 </div>
@@ -41,7 +41,7 @@ export default function RootLayout({
               </div>
             </div>
           </header>
-          <main className="mx-auto max-w-3xl">{children}</main>
+          <main className="mx-auto max-w-3xl px-4 sm:px-6">{children}</main>
         </ThemeProvider>
       </body>
     </html>

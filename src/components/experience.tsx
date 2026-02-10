@@ -82,8 +82,8 @@ const experiences = [
 
 export function Experience() {
   return (
-    <section className="pt-12 pb-6">
-      <h2 className="text-2xl font-semibold tracking-wide">Experiences</h2>
+    <section className="pt-8 pb-4 sm:pt-12 sm:pb-6">
+      <h2 className="text-xl font-semibold tracking-wide sm:text-2xl">Experiences</h2>
 
       <ul>
         {experiences.map((exp, index) => {
@@ -103,12 +103,12 @@ export function Experience() {
 
               {/* Content */}
               <div className="ml-0 sm:ml-12">
-                <div className="border border-border bg-card p-6">
-                  <div className="space-y-4">
+                <div className="border border-border bg-card p-4 sm:p-6">
+                  <div className="space-y-3 sm:space-y-4">
                     {/* Header */}
                     <div className="space-y-1">
-                      <div className="flex items-start justify-between">
-                        <h3 className="text-lg font-semibold text-foreground">
+                      <div className="flex flex-wrap items-start justify-between gap-2">
+                        <h3 className="text-base font-semibold text-foreground sm:text-lg">
                           {exp.title}
                         </h3>
                         {exp.current && (
@@ -117,10 +117,10 @@ export function Experience() {
                           </span>
                         )}
                       </div>
-                      <div className="text-sm text-muted-foreground">
+                      <div className="text-xs text-muted-foreground sm:text-sm">
                         <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="font-medium hover:underline">{exp.company}</a>{exp.internship && <> &bull; Internship</>} &bull; {exp.location}
                       </div>
-                      <div className="text-sm text-muted-foreground">
+                      <div className="text-xs text-muted-foreground sm:text-sm">
                         {exp.period}
                       </div>
                     </div>
@@ -128,8 +128,8 @@ export function Experience() {
                     {/* Description */}
                     <div className="space-y-2">
                       {exp.bullets.map((bullet, i) => (
-                        <div key={i} className="flex items-start text-sm text-foreground">
-                          <span className="mt-1 mr-2 text-muted-foreground">&bull;</span>
+                        <div key={i} className="flex items-start text-xs leading-relaxed text-foreground sm:text-sm">
+                          <span className="mt-0.5 mr-2 shrink-0 text-muted-foreground sm:mt-1">&bull;</span>
                           <span>{bullet}</span>
                         </div>
                       ))}
