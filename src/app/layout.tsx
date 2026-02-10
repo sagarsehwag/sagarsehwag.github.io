@@ -6,11 +6,11 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sagarsehwag.github.io'),
-  title: 'Sagar Sehwag - Frontend Engineer',
+  title: 'Sagar Sehwag - Software Engineer',
   description:
     'A Software Engineer specializing in the development of scalable web applications using React, TypeScript, and a strong commitment to long term engineering quality. I enjoy experimenting with Golang as well.',
   openGraph: {
-    title: 'Sagar Sehwag - Frontend Engineer',
+    title: 'Sagar Sehwag - Software Engineer',
     description:
       'A Software Engineer specializing in the development of scalable web applications using React, TypeScript, and a strong commitment to long term engineering quality. I enjoy experimenting with Golang as well.',
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sagar Sehwag - Frontend Engineer',
+    title: 'Sagar Sehwag - Software Engineer',
     description:
       'A Software Engineer specializing in the development of scalable web applications using React, TypeScript, and a strong commitment to long term engineering quality. I enjoy experimenting with Golang as well.',
     images: ['/og-image.png'],
