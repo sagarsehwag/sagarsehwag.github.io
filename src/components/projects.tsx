@@ -13,6 +13,17 @@ const projects = [
     url: "https://simpplr.github.io/tiptap/@simpplr/athena-tiptap/index.html",
   },
   {
+    name: "Rich Text Editor — System Design",
+    description:
+      "Interactive visual demos explaining how rich text editors work under the hood — rendering, contentEditable, Selection API, state models, update loops, and node data structures. Built from scratch with zero external UI libraries.",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "System Design"],
+    primaryLanguage: "TypeScript",
+    languageColor: "#3178c6",
+    stars: 0,
+    forks: 0,
+    url: "https://sagarsehwag.github.io/rich-text-editor-system-design/",
+  },
+  {
     name: "Pluralsight Downloader",
     description:
       "A Chrome extension to download and track Pluralsight courses. Rewrote and maintained the extension with keyboard shortcuts for course downloading, stop controls, and timed requests to avoid blocking.",

@@ -4,8 +4,18 @@ const experiences = [
     company: "Simpplr",
     companyUrl: "https://www.simpplr.com",
     location: "Gurgaon",
-    period: "October 2023 \u2014 Present",
+    period: "November 2020 \u2014 Present",
     current: true,
+    vertical: {
+      label: "Site & Content",
+      items: [
+        "Content Studio",
+        "Simpplr Editor",
+        "Content Template",
+        "Simpplr Control Centre",
+        "Audience Based Access Control",
+      ],
+    },
     bullets: [
       "Building a modern employee experience platform trusted by leading brands including Zoom, Nutanix, Docusign, Workday, Coursera & Fox.",
       "Led a team of 7 frontend engineers through the concurrent development of a new Content Studio along with a major technical upgrade for the editor, introducing modern state management and a headless editor, while actively mentoring junior engineers.",
@@ -13,6 +23,13 @@ const experiences = [
       "Stepped up to lead a 6+ engineer Zeta pod, shipping 5+ features across 3 quarters.",
       "Designed and implemented a large-scale content migration from Froala to Tiptap, affecting over 500k pages, using a custom two-stage process that prevented visual regressions.",
       "Mentored ~15 junior/new engineers over the years at Simpplr.",
+      "Spearheaded the 6-month initiative to take the rich text editor (built with the headless Tiptap library) from EAP to GA. Acted as the de facto pod lead for the Canada team, guiding 7 frontend engineers through development, coordination, and handoff.",
+      "Led the effort to rebuild the Simpplr Control Center as a Micro Frontend (MFE) leveraging a modern technology stack, boosting modularity and scalability.",
+    ],
+    otherBullets: [
+      "Took 40+ frontend interviews",
+      "Received 1\u2605 award for key impact",
+      "Earned a 5\u2605 rating \u2014 top performer in the company",
     ],
     technologies: [
       "React",
@@ -20,41 +37,11 @@ const experiences = [
       "Tiptap",
       "Micro Frontends",
       "Module Federation",
-    ],
-  },
-  {
-    title: "Software Engineer",
-    company: "Simpplr",
-    companyUrl: "https://www.simpplr.com",
-    location: "Gurgaon",
-    period: "April 2022 \u2014 September 2023",
-    current: false,
-    bullets: [
-      "Spearheaded the 6-month initiative to take the rich text editor (built with the headless Tiptap library) from EAP to GA. Acted as the de facto pod lead for the Canada team, guiding 7 frontend engineers through development, coordination, and handoff.",
-      "Led the effort to rebuild the Simpplr Control Center as a Micro Frontend (MFE) leveraging a modern technology stack, boosting modularity and scalability.",
-      "Designed and delivered a self-contained Page Template module, built with scalability in mind and structured for easy future migration to a micro frontend with minimal refactoring (<10%).",
-    ],
-    technologies: [
-      "React",
-      "TypeScript",
-      "Tiptap",
-      "MFE",
       "Webpack",
-      "Module Federation",
+      "JavaScript",
+      "jQuery",
+      "CSS",
     ],
-  },
-  {
-    title: "Associate Software Engineer",
-    company: "Simpplr",
-    companyUrl: "https://www.simpplr.com",
-    location: "Gurgaon",
-    period: "November 2020 \u2014 March 2022",
-    current: false,
-    bullets: [
-      "Created a user-friendly platform onboarding tour to introduce new users to the product's key features.",
-      "Migrated the existing jQuery codebase to React and delivered many small independent features.",
-    ],
-    technologies: ["React", "JavaScript", "jQuery", "CSS"],
   },
   {
     title: "Software Engineer",
@@ -125,8 +112,30 @@ export function Experience() {
                       </div>
                     </div>
 
+                    {/* Vertical */}
+                    {"vertical" in exp && exp.vertical && (
+                      <div className="space-y-2">
+                        <h4 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+                          {exp.vertical.label} (Vertical)
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {exp.vertical.items.map((item) => (
+                            <span
+                              key={item}
+                              className="bg-muted px-2 py-1 text-xs font-medium text-foreground"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                     {/* Description */}
                     <div className="space-y-2">
+                      <h4 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+                        The Work
+                      </h4>
                       {exp.bullets.map((bullet, i) => (
                         <div key={i} className="flex items-start text-xs leading-relaxed text-foreground sm:text-sm">
                           <span className="mt-0.5 mr-2 shrink-0 text-muted-foreground sm:mt-1">&bull;</span>
@@ -134,6 +143,21 @@ export function Experience() {
                         </div>
                       ))}
                     </div>
+
+                    {/* Other Stuff */}
+                    {"otherBullets" in exp && exp.otherBullets && (
+                      <div className="space-y-2">
+                        <h4 className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+                          Other Stuff
+                        </h4>
+                        {exp.otherBullets.map((bullet, i) => (
+                          <div key={i} className="flex items-start text-xs leading-relaxed text-foreground sm:text-sm">
+                            <span className="mt-0.5 mr-2 shrink-0 text-muted-foreground sm:mt-1">&bull;</span>
+                            <span>{bullet}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
 
                     {/* Technologies */}
                     <div className="space-y-2">
