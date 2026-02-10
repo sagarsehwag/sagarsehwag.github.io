@@ -5,7 +5,7 @@ const projects = [
     name: "Simpplr Editor",
     description:
       "A rich text editor built on Tiptap with a wide range of extensions that can be easily enabled or disabled using feature flags. Used for creating feeds, blogs, pages, and event pages.",
-    tags: ["React", "TypeScript", "Tiptap", "Feature Flags"],
+    tags: ["React", "TypeScript", "Tiptap", "Editor", "Vanilla JavaScript"],
     primaryLanguage: "TypeScript",
     languageColor: "#3178c6",
     stars: 0,
