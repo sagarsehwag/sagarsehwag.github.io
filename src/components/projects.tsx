@@ -1,6 +1,6 @@
 'use client';
 
-import { Star, GitFork, Play } from 'lucide-react';
+import { Star, GitFork, Play, ExternalLink } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -35,7 +35,7 @@ const projects = [
     languageColor: '#3178c6',
     stars: 0,
     forks: 0,
-    url: 'https://sagarsehwag.github.io/rich-text-editor-system-design/',
+    url: 'https://github.com/sagarsehwag/rich-text-editor-system-design',
     demoUrl: 'https://sagarsehwag.github.io/rich-text-editor-system-design/',
   },
   {
@@ -71,7 +71,7 @@ export function Projects() {
             <div className='space-y-3 p-4 sm:space-y-4 sm:p-6'>
               {/* Header Section */}
               <div className='flex flex-col items-start justify-between gap-1.5'>
-                <div className='flex w-full items-center gap-2'>
+                <div className='flex w-full items-center justify-between gap-2'>
                   <a
                     href={project.url}
                     target='_blank'
@@ -83,10 +83,11 @@ export function Projects() {
                   {project.demoUrl && (
                     <button
                       onClick={() => setDemoProject(project)}
-                      className='inline-flex cursor-pointer items-center justify-center rounded-full border border-input p-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground'
+                      className='inline-flex cursor-pointer items-center justify-center gap-1 rounded-full border border-foreground px-2.5 py-1 text-xs font-medium text-foreground transition-colors hover:bg-foreground hover:text-background'
                       title='View demo'
                     >
-                      <Play className='h-3.5 w-3.5' />
+                      <Play className='h-3 w-3' />
+                      Demo
                     </button>
                   )}
                 </div>
@@ -147,6 +148,18 @@ export function Projects() {
                   Live demo of {demoProject?.name}
                 </DialogDescription>
               </div>
+              {demoProject?.demoUrl && (
+                <a
+                  href={demoProject.demoUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='inline-flex items-center gap-1 rounded-xs text-xs text-muted-foreground transition-colors hover:text-foreground'
+                  title='Open in new tab'
+                >
+                  <ExternalLink className='h-3.5 w-3.5' />
+                  Open in new tab
+                </a>
+              )}
             </div>
           </DialogHeader>
           <div className='min-h-0 flex-1 p-4'>
