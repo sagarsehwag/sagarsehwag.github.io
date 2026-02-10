@@ -126,6 +126,9 @@
     @apply bg-background text-foreground;
     font-family: "Geist Mono Variable", monospace;
   }
+  mark {
+    @apply bg-violet-500/15 text-violet-500 px-0.5 rounded-sm;
+  }
 }
 
 /* Theme mono overrides - compact mono aesthetic with industry-standard readability */

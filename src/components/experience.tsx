@@ -7,12 +7,12 @@ const experiences = [
     period: "October 2023 \u2014 Present",
     current: true,
     bullets: [
-      "Building a modern employee experience platform trusted by leading brands including Zoom, Nutanix, Docusign, Workday, Coursera & Fox.",
-      "Led a team of 7 frontend engineers through the concurrent development of a new Content Studio along with a major technical upgrade for the editor, introducing modern state management and a headless editor, while actively mentoring junior engineers.",
-      "Designed and built an automated system to generate previews for content templates, improving performance and discoverability at scale.",
-      "Stepped up to lead a 6+ engineer Zeta pod, shipping 5+ features across 3 quarters.",
-      "Designed and implemented a large-scale content migration from Froala to Tiptap, affecting over 500k pages, using a custom two-stage process that prevented visual regressions.",
-      "Mentored ~15 junior/new engineers over the years at Simpplr.",
+      <>Building a <mark>modern employee experience platform</mark> trusted by leading brands including Zoom, Nutanix, Docusign, Workday, Coursera & Fox.</>,
+      <><mark>Led a team of 7 frontend engineers</mark> through the concurrent development of a new Content Studio along with a major technical upgrade for the editor, <mark>Introducing modern state management and a headless editor</mark>, while actively mentoring junior engineers.</>,
+      <>Designed and built an automated system to <mark>generate previews for content templates</mark>, improving performance and discoverability at scale.</>,
+      <>Stepped up to lead a 6+ engineer Zeta pod, shipping 5+ features across 3 quarters.</>,
+      <>Designed and implemented a <mark>large-scale content migration from Froala to Tiptap</mark>, affecting over <mark>500k pages</mark>, using a custom two-stage process that prevented visual regressions.</>,
+      <><mark>Mentored ~15 junior/new engineers</mark> over the years at Simpplr.</>,
     ],
     technologies: [
       "React",
@@ -30,9 +30,9 @@ const experiences = [
     period: "April 2022 \u2014 September 2023",
     current: false,
     bullets: [
-      "Spearheaded the 6-month initiative to take the rich text editor (built with the headless Tiptap library) from EAP to GA. Acted as the de facto pod lead for the Canada team, guiding 7 frontend engineers through development, coordination, and handoff.",
-      "Led the effort to rebuild the Simpplr Control Center as a Micro Frontend (MFE) leveraging a modern technology stack, boosting modularity and scalability.",
-      "Designed and delivered a self-contained Page Template module, built with scalability in mind and structured for easy future migration to a micro frontend with minimal refactoring (<10%).",
+      <>Spearheaded the 6-month initiative to take the rich text editor (built with the headless Tiptap library) from <mark>EAP to GA</mark>. Acted as the <mark>de facto pod lead for the Canada team</mark>, guiding 7 frontend engineers through development, coordination, and handoff.</>,
+      <>Led the effort to <mark>rebuild the Simpplr Control Center as a Micro Frontend</mark> (MFE) leveraging a modern technology stack, boosting modularity and scalability.</>,
+      <><mark>Designed and delivered a self-contained Page Template module</mark>, built with scalability in mind and structured for easy future migration to a micro frontend with minimal refactoring (&lt;10%).</>,
     ],
     technologies: [
       "React",
@@ -51,8 +51,8 @@ const experiences = [
     period: "November 2020 \u2014 March 2022",
     current: false,
     bullets: [
-      "Created a user-friendly platform onboarding tour to introduce new users to the product's key features.",
-      "Migrated the existing jQuery codebase to React and delivered many small independent features.",
+      <>Created a user-friendly platform onboarding tour to introduce new users to the product&#39;s key features.</>,
+      <>Migrated the existing jQuery codebase to React and delivered many small independent features.</>,
     ],
     technologies: ["React", "JavaScript", "jQuery", "CSS"],
   },
@@ -65,9 +65,9 @@ const experiences = [
     current: false,
     internship: true,
     bullets: [
-      "Generalized an existing notification system to support multiple applications across various sub-companies, including HyperPure, enhancing scalability and flexibility.",
-      "Docker containerized the notification service to streamline deployment and improve the development workflow.",
-      "Developed a resumable uploading functionality for large CSV files (in gigabytes) to AWS S3.",
+      <>Generalized an existing notification system to support multiple applications across various sub-companies, including HyperPure, enhancing scalability and flexibility.</>,
+      <><mark>Docker containerized the notification service</mark> to streamline deployment and improve the development workflow.</>,
+      <>Developed a resumable uploading functionality for large CSV files (in gigabytes) to AWS S3.</>,
     ],
     technologies: [
       "Golang",
