@@ -1,6 +1,6 @@
 # Sagar Sehwag - Portfolio
 
-A minimal, monospace-themed developer portfolio built with Next.js, TypeScript, and Tailwind CSS. Fully responsive and deployed on both GitHub Pages and Vercel.
+A minimal, monospace-themed developer portfolio built with Next.js, TypeScript, and Tailwind CSS. Features dark/light mode, semantic text highlighting, responsive typography tuned for readability, and a clean timeline layout. Fully responsive and deployed on both GitHub Pages and Vercel.
 
 **[sagarsehwag.github.io](https://sagarsehwag.github.io)** | **[sagarsehwag.vercel.app](https://sagarsehwag.vercel.app)**
 
@@ -8,16 +8,29 @@ A minimal, monospace-themed developer portfolio built with Next.js, TypeScript, 
 
 ## Screenshots
 
+### Desktop
+
 <table>
   <tr>
-    <td align="center"><strong>Hero & Projects</strong></td>
-    <td align="center"><strong>Projects</strong></td>
-    <td align="center"><strong>Experience</strong></td>
+    <td align="center"><strong>Dark Mode</strong></td>
+    <td align="center"><strong>Light Mode</strong></td>
   </tr>
   <tr>
-    <td><img src="public/screenshots/mobile-view-1-top.png" width="200" alt="Hero section" /></td>
-    <td><img src="public/screenshots/mobile-view-2-scroll.png" width="200" alt="Projects section" /></td>
-    <td><img src="public/screenshots/mobile-view-4-experience.png" width="200" alt="Experience section" /></td>
+    <td><img src="public/screenshots/desktop-dark-full.png" width="400" alt="Desktop dark mode" /></td>
+    <td><img src="public/screenshots/desktop-light-full.png" width="400" alt="Desktop light mode" /></td>
+  </tr>
+</table>
+
+### Mobile
+
+<table>
+  <tr>
+    <td align="center"><strong>Dark Mode</strong></td>
+    <td align="center"><strong>Light Mode</strong></td>
+  </tr>
+  <tr>
+    <td><img src="public/screenshots/mobile-dark-full.png" width="250" alt="Mobile dark mode" /></td>
+    <td><img src="public/screenshots/mobile-light-full.png" width="250" alt="Mobile light mode" /></td>
   </tr>
 </table>
 
@@ -25,25 +38,37 @@ A minimal, monospace-themed developer portfolio built with Next.js, TypeScript, 
 
 ## Tech Stack
 
-| Category       | Technology                                             |
-| -------------- | ------------------------------------------------------ |
-| **Framework**  | [Next.js 16](https://nextjs.org/) (App Router)        |
-| **Language**   | [TypeScript](https://www.typescriptlang.org/)          |
-| **Styling**    | [Tailwind CSS v4](https://tailwindcss.com/)            |
-| **Components** | [shadcn/ui](https://ui.shadcn.com/) + Radix Primitives|
-| **Font**       | [Geist Mono](https://vercel.com/font)                  |
+| Category       | Technology                                              |
+| -------------- | ------------------------------------------------------- |
+| **Framework**  | [Next.js 16](https://nextjs.org/) (App Router)         |
+| **Language**   | [TypeScript](https://www.typescriptlang.org/)           |
+| **Styling**    | [Tailwind CSS v4](https://tailwindcss.com/)             |
+| **Components** | [shadcn/ui](https://ui.shadcn.com/) + Radix Primitives |
+| **Font**       | [Geist Mono](https://vercel.com/font)                   |
 | **Theming**    | [next-themes](https://github.com/pacocoursey/next-themes) (dark/light) |
-| **Icons**      | [Lucide React](https://lucide.dev/)                    |
+| **Icons**      | [Lucide React](https://lucide.dev/)                     |
+
+---
+
+## Features
+
+- **Dark / Light mode** — System-aware toggle with next-themes
+- **Semantic text highlighting** — Key experience achievements highlighted using native `<mark>` elements with a violet accent that works in both themes
+- **Responsive typography** — Custom font size overrides tuned for readability at mobile, tablet, and desktop breakpoints (meets WCAG minimums)
+- **Monospace aesthetic** — Geist Mono throughout for a developer-focused feel
+- **Project demo dialogs** — Inline iframe previews with video and live demo support
+- **Timeline layout** — Work experience displayed with a vertical timeline and dot indicators
 
 ---
 
 ## Sections
 
-- **Hero** -- Introduction, role, and quick links
-- **Projects** -- Notable work with tech tags and GitHub stats
-- **Experience** -- Timeline of roles with detailed bullet points
-- **Education** -- Academic background
-- **Socials** -- Email, LinkedIn, GitHub, Phone
+- **Hero** — Introduction, role, resume preview, and quick links
+- **Projects** — Notable work with tech tags, GitHub stats, and live demo dialogs
+- **Experience** — Timeline of roles with highlighted bullet points
+- **Skills** — Categorized skill tags
+- **Socials** — Email, LinkedIn, GitHub, Phone
+- **Footer** — Copyright
 
 ---
 
@@ -89,22 +114,33 @@ The repository is connected to Vercel for automatic deployments. Every push to `
 ```
 src/
   app/
-    globals.css        # Theme variables, font config, responsive overrides
-    layout.tsx         # Root layout with header, theme provider
+    globals.css        # Theme variables, font config, responsive overrides, mark styling
+    layout.tsx         # Root layout with header, theme provider, metadata
     page.tsx           # Home page composing all sections
   components/
     hero.tsx           # Hero section with intro and CTA buttons
-    projects.tsx       # Project cards with tags and stats
-    experience.tsx     # Work experience timeline
+    projects.tsx       # Project cards with tags, stats, and demo dialogs
+    experience.tsx     # Work experience timeline with highlighted bullets
+    skills.tsx         # Categorized skill tags
     education.tsx      # Education card
     socials.tsx        # Social links grid
     footer.tsx         # Footer with copyright
     theme-provider.tsx # next-themes provider wrapper
     theme-toggle.tsx   # Dark/light mode toggle
-    ui/                # shadcn/ui primitives (badge, button, card, separator)
+    ui/                # shadcn/ui primitives (badge, button, card, dialog, separator)
   lib/
     utils.ts           # Utility functions (cn)
 ```
+
+---
+
+## Regenerate Screenshots
+
+```bash
+node scripts/capture-screenshots.mjs
+```
+
+Requires Playwright with Chromium installed (`npx playwright install chromium`).
 
 ---
 
