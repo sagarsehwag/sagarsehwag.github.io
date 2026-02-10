@@ -140,8 +140,8 @@ export function Projects() {
         <DialogContent className='flex h-[85vh] max-w-5xl flex-col gap-0 p-0 lg:max-w-6xl xl:max-w-7xl'>
           <DialogHeader className='flex-none border-b px-4 py-3'>
             <div className='flex items-center justify-between pr-8'>
-              <div>
-                <DialogTitle className='text-base leading-normal'>
+              <div className='min-w-0 pr-4'>
+                <DialogTitle className='text-base leading-normal truncate'>
                   {demoProject?.name}
                 </DialogTitle>
                 <DialogDescription className='sr-only'>
