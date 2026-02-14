@@ -10,6 +10,7 @@ export type Video = {
 };
 
 export type Project = {
+  slug: string;
   name: string;
   description: string;
   tags: string[];
@@ -58,6 +59,7 @@ const contentStudioScreenshots: Screenshot[] = [
 
 export const projects: Project[] = [
   {
+    slug: 'content-studio',
     name: 'Content Studio - Simpplr Editor',
     description:
       'Content Studio is a modern, block-based editor for creating pages, offering drag-and-drop layouts, auto-save, and improved performance. Built on Tiptap, it supports feature-flagged extensions and is used to create feeds, blogs, pages, and event pages.',
@@ -78,6 +80,7 @@ export const projects: Project[] = [
     screenshots: contentStudioScreenshots,
   },
   {
+    slug: 'rich-text-editor',
     name: 'Rich Text Editor — System Design',
     description:
       'Interactive visual demos explaining how rich text editors work under the hood — rendering, contentEditable, Selection API, state models, update loops, and node data structures. Built from scratch with zero external UI libraries.',
@@ -90,6 +93,7 @@ export const projects: Project[] = [
     demoUrl: 'https://sagarsehwag.github.io/rich-text-editor-system-design/',
   },
   {
+    slug: 'pluralsight-downloader',
     name: 'Pluralsight Course Downloader',
     description:
       'A Chrome extension to download and track Pluralsight courses. Rewrote and maintained the extension with keyboard shortcuts for course downloading, stop controls, and timed requests to avoid blocking.',
