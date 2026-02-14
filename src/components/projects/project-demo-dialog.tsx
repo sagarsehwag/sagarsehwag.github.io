@@ -55,6 +55,7 @@ export function ProjectDemoDialog({
         {project?.screenshots ? (
           <ScreenshotCarousel
             screenshots={project.screenshots}
+            videos={project.videos}
             videoUrl={project.videoUrl}
             projectName={project.name}
           />

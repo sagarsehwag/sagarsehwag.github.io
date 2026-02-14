@@ -3,6 +3,12 @@ export type Screenshot = {
   alt: string;
 };
 
+export type Video = {
+  src: string;
+  title: string;
+  type: 'iframe' | 'video';
+};
+
 export type Project = {
   name: string;
   description: string;
@@ -14,6 +20,7 @@ export type Project = {
   url: string;
   demoUrl?: string;
   videoUrl?: string;
+  videos?: Video[];
   screenshots?: Screenshot[];
 };
 
@@ -64,6 +71,10 @@ export const projects: Project[] = [
       'https://simpplr.github.io/tiptap/@simpplr/athena-tiptap/index.html',
     videoUrl:
       'https://drive.google.com/file/d/111vowwwOIX4U2DBHNBal4LUIvEusMAuM/preview',
+    videos: [
+      { src: '/sceenrecordings/cover-demo.mov', title: 'Cover Image Demo', type: 'video' },
+      { src: 'https://drive.google.com/file/d/111vowwwOIX4U2DBHNBal4LUIvEusMAuM/preview', title: 'Full Editor Demo', type: 'iframe' },
+    ],
     screenshots: contentStudioScreenshots,
   },
   {
