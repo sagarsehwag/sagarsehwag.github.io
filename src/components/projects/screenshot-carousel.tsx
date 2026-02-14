@@ -47,8 +47,8 @@ export function ScreenshotCarousel({
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className='-left-3 sm:-left-4' />
-        <CarouselNext className='-right-3 sm:-right-4' />
+        <CarouselPrevious className='-left-3 sm:-left-4 bg-black text-white border-border hover:bg-black/80 hover:text-white dark:bg-black dark:text-white dark:border-input dark:hover:bg-black/80' />
+        <CarouselNext className='-right-3 sm:-right-4 bg-black text-white border-border hover:bg-black/80 hover:text-white dark:bg-black dark:text-white dark:border-input dark:hover:bg-black/80' />
       </Carousel>
 
       {videoUrl && (
