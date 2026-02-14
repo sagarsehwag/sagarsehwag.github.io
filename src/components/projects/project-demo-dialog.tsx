@@ -1,3 +1,4 @@
+import { ExternalLink } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -27,13 +28,27 @@ export function ProjectDemoDialog({
         }`}
       >
         <DialogHeader className='flex-none border-b px-4 py-3'>
-          <div className='pr-8'>
-            <DialogTitle className='text-base leading-normal truncate'>
-              {project?.name}
-            </DialogTitle>
-            <DialogDescription className='sr-only'>
-              Live demo of {project?.name}
-            </DialogDescription>
+          <div className='flex items-center justify-between pr-8'>
+            <div className='min-w-0 pr-4'>
+              <DialogTitle className='text-base leading-normal truncate'>
+                {project?.name}
+              </DialogTitle>
+              <DialogDescription className='sr-only'>
+                Live demo of {project?.name}
+              </DialogDescription>
+            </div>
+            {!project?.screenshots && project?.demoUrl && (
+              <a
+                href={project.demoUrl}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='inline-flex shrink-0 items-center gap-1 rounded-xs text-xs text-muted-foreground transition-colors hover:text-foreground'
+                title='Open in new tab'
+              >
+                <ExternalLink className='h-3.5 w-3.5' />
+                Open in new tab
+              </a>
+            )}
           </div>
         </DialogHeader>
 
