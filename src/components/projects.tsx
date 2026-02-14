@@ -11,7 +11,11 @@ export function Projects() {
   useEffect(() => {
     const hash = window.location.hash.slice(1);
     const match = projects.find((p) => p.slug === hash && p.demoUrl);
-    if (match) setDemoProject(match);
+    if (match) {
+      // Delay to ensure Dialog is mounted after hydration
+      const timer = setTimeout(() => setDemoProject(match), 100);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   return (
