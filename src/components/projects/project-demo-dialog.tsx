@@ -37,18 +37,32 @@ export function ProjectDemoDialog({
                 Live demo of {project?.name}
               </DialogDescription>
             </div>
-            {!project?.screenshots && project?.demoUrl && (
-              <a
-                href={project.demoUrl}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='inline-flex shrink-0 items-center gap-1 rounded-xs text-xs text-muted-foreground transition-colors hover:text-foreground'
-                title='Open in new tab'
-              >
-                <ExternalLink className='h-3.5 w-3.5' />
-                Open in new tab
-              </a>
-            )}
+            <div className='flex shrink-0 items-center gap-3'>
+              {project?.blogUrl && (
+                <a
+                  href={project.blogUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='inline-flex items-center gap-1 rounded-xs text-xs text-muted-foreground transition-colors hover:text-foreground'
+                  title='Read tech blog'
+                >
+                  <ExternalLink className='h-3.5 w-3.5' />
+                  Tech blog
+                </a>
+              )}
+              {!project?.screenshots && project?.demoUrl && (
+                <a
+                  href={project.demoUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='inline-flex shrink-0 items-center gap-1 rounded-xs text-xs text-muted-foreground transition-colors hover:text-foreground'
+                  title='Open in new tab'
+                >
+                  <ExternalLink className='h-3.5 w-3.5' />
+                  Open in new tab
+                </a>
+              )}
+            </div>
           </div>
         </DialogHeader>
 

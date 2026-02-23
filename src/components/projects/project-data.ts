@@ -23,6 +23,7 @@ export type Project = {
   videoUrl?: string;
   videos?: Video[];
   screenshots?: Screenshot[];
+  blogUrl?: string;
 };
 
 const contentStudioScreenshots: Screenshot[] = [
@@ -75,9 +76,12 @@ export const projects: Project[] = [
       'https://drive.google.com/file/d/111vowwwOIX4U2DBHNBal4LUIvEusMAuM/preview',
     videos: [
       { src: '/sceenrecordings/cover-demo.mov', title: 'Cover Image Demo', type: 'video' },
+      { src: '/sceenrecordings/rich-content-demo.mov', title: 'Rich Content Demo', type: 'video' },
+      { src: '/sceenrecordings/page-setting-demo.mov', title: 'Page Settings Demo', type: 'video' },
       { src: 'https://drive.google.com/file/d/111vowwwOIX4U2DBHNBal4LUIvEusMAuM/preview', title: 'Full Editor Demo', type: 'iframe' },
     ],
     screenshots: contentStudioScreenshots,
+    blogUrl: 'https://sagarsehwag.substack.com/p/content-studio-how-we-rebuilt-simpplrs',
   },
   {
     slug: 'rich-text-editor',
