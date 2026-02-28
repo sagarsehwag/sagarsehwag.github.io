@@ -85,7 +85,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'rich-text-editor',
-    name: 'Editor System Design',
+    name: 'Editor Mechanics · ProseMirror',
     description:
       'Interactive visual demos explaining how rich text editors work under the hood — rendering, contentEditable, Selection API, state models, update loops, and node data structures. Built from scratch with zero external UI libraries.',
     tags: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'System Design'],
