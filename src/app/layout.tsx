@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/og-image.png',
-        width: 1565,
-        height: 1343,
-        alt: 'Sagar Sehwag',
+        width: 1200,
+        height: 630,
+        alt: 'Sagar Sehwag — Frontend Engineer',
       },
     ],
     type: 'website',
