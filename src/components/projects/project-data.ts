@@ -94,7 +94,7 @@ export const projects: Project[] = [
     stars: 0,
     forks: 0,
     url: 'https://github.com/sagarsehwag/rich-text-editor-system-design',
-    demoUrl: 'https://sagarsehwag.github.io/rich-text-editor-system-design/',
+    demoUrl: 'https://sagarsehwag.github.io/editor-system-design',
   },
   {
     slug: 'pluralsight-downloader',
