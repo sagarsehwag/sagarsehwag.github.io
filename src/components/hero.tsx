@@ -11,9 +11,9 @@ import {
 import { useState } from 'react';
 
 const RESUME_URL =
-  'https://drive.google.com/file/d/1EA3EzRyDfaPQiyf-hxQhXyne3z62RnSW/view?usp=drive_link';
+  'https://drive.google.com/file/d/1JK-KRl627CuPKaD2w1HgcCC2_Brkq6Vb/view?usp=drive_link';
 const RESUME_EMBED_URL =
-  'https://drive.google.com/file/d/1EA3EzRyDfaPQiyf-hxQhXyne3z62RnSW/preview';
+  'https://drive.google.com/file/d/1JK-KRl627CuPKaD2w1HgcCC2_Brkq6Vb/preview';
 
 export function Hero() {
   const [open, setOpen] = useState(false);

@@ -81,11 +81,11 @@ export const projects: Project[] = [
       { src: 'https://drive.google.com/file/d/111vowwwOIX4U2DBHNBal4LUIvEusMAuM/preview', title: 'Full Editor Demo', type: 'iframe' },
     ],
     screenshots: contentStudioScreenshots,
-    blogUrl: 'https://sagarsehwag.substack.com/p/content-studio-how-we-rebuilt-simpplrs',
+    blogUrl: 'https://sagarsehwag.substack.com/p/b27c632b-b5c3-47e9-a93f-80b18c13fd52',
   },
   {
     slug: 'rich-text-editor',
-    name: 'Rich Text Editor — System Design',
+    name: 'Editor System Design',
     description:
       'Interactive visual demos explaining how rich text editors work under the hood — rendering, contentEditable, Selection API, state models, update loops, and node data structures. Built from scratch with zero external UI libraries.',
     tags: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'System Design'],
