@@ -93,8 +93,8 @@ export const projects: Project[] = [
     languageColor: '#3178c6',
     stars: 0,
     forks: 0,
-    url: 'https://github.com/sagarsehwag/rich-text-editor-system-design',
-    demoUrl: 'https://sagarsehwag.github.io/editor-system-design',
+    url: 'https://github.com/sagarsehwag/prosemirror-mechanics',
+    demoUrl: 'https://sagarsehwag.github.io/prosemirror-mechanics',
   },
   {
     slug: 'pluralsight-downloader',
