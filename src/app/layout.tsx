@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       'A Software Engineer specializing in the development of scalable web applications using React, TypeScript, and a strong commitment to long term engineering quality.',
     images: [
       {
-        url: '/og-image.png?v=2',
+        url: '/og-image.png?v=3',
         width: 1200,
         height: 630,
         alt: 'Sagar Sehwag — Frontend Engineer',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: 'Sagar Sehwag',
     description:
       'A Software Engineer specializing in the development of scalable web applications using React, TypeScript, and a strong commitment to long term engineering quality.',
-    images: ['/og-image.png?v=2'],
+    images: ['/og-image.png?v=3'],
   },
 };
 

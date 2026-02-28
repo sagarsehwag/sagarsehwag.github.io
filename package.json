@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "og-image": "node scripts/generate-og-image.mjs",
     "start": "next start",
     "lint": "eslint"
   },
@@ -23,6 +24,7 @@
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
+    "playwright": "^1.49.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
