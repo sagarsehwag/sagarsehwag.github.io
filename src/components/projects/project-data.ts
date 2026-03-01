@@ -61,7 +61,7 @@ const contentStudioScreenshots: Screenshot[] = [
 export const projects: Project[] = [
   {
     slug: 'content-studio',
-    name: 'Content Studio - Simpplr Editor',
+    name: 'Content Studio · Simpplr Editor',
     description:
       'Content Studio is a modern, block-based editor for creating pages, offering drag-and-drop layouts, auto-save, and improved performance. Built on Tiptap, it supports feature-flagged extensions and is used to create feeds, blogs, pages, and event pages.',
     tags: ['React', 'TypeScript', 'Tiptap', 'Editor', 'DOM'],
