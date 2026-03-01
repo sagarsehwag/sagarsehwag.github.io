@@ -8,7 +8,7 @@ const experiences = [
     current: true,
     bullets: [
       <>Building a <mark>modern employee experience platform</mark> trusted by leading brands including Zoom, Nutanix, Docusign, Workday, Coursera & Fox.</>,
-      <><mark>Led a team of 7 frontend engineers</mark> through the concurrent development of a new Content Studio along with a major technical upgrade for the editor, <mark>Introducing modern state management and a headless editor</mark>, while actively mentoring junior engineers.</>,
+      <><mark>Led a team of 5 frontend engineers</mark> through the concurrent development of a new Content Studio along with a major technical upgrade for the editor, <mark>Introducing modern state management and a headless editor</mark>, while actively mentoring junior engineers.</>,
       <>Designed and built an automated system to <mark>generate previews for content templates</mark>, improving performance and discoverability at scale.</>,
       <>Stepped up to lead a 6+ engineer Zeta pod, shipping 5+ features across 3 quarters.</>,
       <>Designed and implemented a <mark>large-scale content migration from Froala to Tiptap</mark>, affecting over <mark>500k pages</mark>, using a custom two-stage process that prevented visual regressions.</>,
