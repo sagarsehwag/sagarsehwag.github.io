@@ -85,16 +85,16 @@ export const projects: Project[] = [
   },
   {
     slug: 'rich-text-editor',
-    name: 'Editor Mechanics · ProseMirror',
+    name: 'Prosemirror Visualiser · Editor',
     description:
-      'Interactive visual demos explaining how rich text editors work under the hood — rendering, contentEditable, Selection API, state models, update loops, and node data structures. Built from scratch with zero external UI libraries.',
+      'An interactive playground to explore ProseMirror internals and understand how modern rich text editors work, from contentEditable and the selection api to state management, transaction cycles, rendering, and node data structures.',
     tags: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'System Design'],
     primaryLanguage: 'TypeScript',
     languageColor: '#3178c6',
     stars: 0,
     forks: 0,
-    url: 'https://github.com/sagarsehwag/prosemirror-mechanics',
-    demoUrl: 'https://sagarsehwag.github.io/prosemirror-mechanics',
+    url: 'https://github.com/sagarsehwag/prosemirror-mechanics/visualiser',
+    demoUrl: 'https://sagarsehwag.github.io/prosemirror-mechanics/visualiser',
   },
   {
     slug: 'pluralsight-downloader',
