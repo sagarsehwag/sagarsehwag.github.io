@@ -69,9 +69,9 @@ export const projects: Project[] = [
     languageColor: '#3178c6',
     stars: 0,
     forks: 0,
-    url: 'https://simpplr.github.io/tiptap/@simpplr/athena-tiptap/index.html',
+    url: 'https://simpplr.github.io/shared-components/tiptap-editor/',
     demoUrl:
-      'https://simpplr.github.io/tiptap/@simpplr/athena-tiptap/index.html',
+      'https://simpplr.github.io/shared-components/tiptap-editor/',
     videoUrl:
       'https://drive.google.com/file/d/111vowwwOIX4U2DBHNBal4LUIvEusMAuM/preview',
     videos: [
