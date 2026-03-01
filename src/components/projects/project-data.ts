@@ -93,7 +93,7 @@ export const projects: Project[] = [
     languageColor: '#3178c6',
     stars: 0,
     forks: 0,
-    url: 'https://github.com/sagarsehwag/prosemirror-mechanics/visualiser',
+    url: 'https://github.com/sagarsehwag/prosemirror-mechanics',
     demoUrl: 'https://sagarsehwag.github.io/prosemirror-mechanics/visualiser',
   },
   {
