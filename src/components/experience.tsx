@@ -1,10 +1,19 @@
+'use client';
+
+import { useState, useRef, useEffect } from 'react';
+import { ChevronDownIcon } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+
+const COLLAPSED_MAX_HEIGHT = 192; // ~12rem in px
+
 const experiences = [
   {
     title: 'Senior Software Engineer',
     company: 'Simpplr',
     companyUrl: 'https://www.simpplr.com',
     location: 'Gurgaon',
-    period: 'October 2023 \u2014 Present',
+    period: 'November 2020 \u2014 Present',
     current: true,
     bullets: [
       <>
@@ -38,23 +47,6 @@ const experiences = [
         <mark>Mentored ~15 junior/new engineers</mark> over the years at
         Simpplr.
       </>,
-    ],
-    technologies: [
-      'React',
-      'TypeScript',
-      'Tiptap',
-      'Micro Frontends',
-      'Module Federation',
-    ],
-  },
-  {
-    title: 'Software Engineer',
-    company: 'Simpplr',
-    companyUrl: 'https://www.simpplr.com',
-    location: 'Gurgaon',
-    period: 'April 2022 \u2014 September 2023',
-    current: false,
-    bullets: [
       <>
         Spearheaded the 6-month initiative to take the rich text editor (built
         with the headless Tiptap library) from <mark>EAP to GA</mark>. Acted as
@@ -74,24 +66,6 @@ const experiences = [
         , built with scalability in mind and structured for easy future
         migration to a micro frontend with minimal refactoring (&lt;10%).
       </>,
-    ],
-    technologies: [
-      'React',
-      'TypeScript',
-      'Tiptap',
-      'MFE',
-      'Webpack',
-      'Module Federation',
-    ],
-  },
-  {
-    title: 'Associate Software Engineer',
-    company: 'Simpplr',
-    companyUrl: 'https://www.simpplr.com',
-    location: 'Gurgaon',
-    period: 'November 2020 \u2014 March 2022',
-    current: false,
-    bullets: [
       <>
         Created a user-friendly platform onboarding tour to introduce new users
         to the product&#39;s key features.
@@ -101,7 +75,18 @@ const experiences = [
         independent features.
       </>,
     ],
-    technologies: ['React', 'JavaScript', 'jQuery', 'CSS'],
+    technologies: [
+      'React',
+      'TypeScript',
+      'Tiptap',
+      'Micro Frontends',
+      'Module Federation',
+      'MFE',
+      'Webpack',
+      'JavaScript',
+      'jQuery',
+      'CSS',
+    ],
   },
   {
     title: 'Software Engineer',
@@ -130,6 +115,141 @@ const experiences = [
   },
 ];
 
+function ExperienceCard({
+  exp,
+  isLast,
+}: {
+  exp: (typeof experiences)[0];
+  isLast: boolean;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const [showReadMore, setShowReadMore] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = contentRef.current;
+    if (!el) return;
+    const checkOverflow = () => {
+      setShowReadMore(el.scrollHeight > COLLAPSED_MAX_HEIGHT);
+    };
+    checkOverflow();
+    const resizeObserver = new ResizeObserver(checkOverflow);
+    resizeObserver.observe(el);
+    return () => resizeObserver.disconnect();
+  }, [expanded, exp.bullets]);
+
+  return (
+    <li className='relative my-6'>
+      {/* Timeline Line */}
+      {!isLast && (
+        <div className='absolute top-12 left-4 h-full w-px bg-border hidden sm:block' />
+      )}
+
+      {/* Timeline Dot */}
+      <div className='absolute top-6 left-2 h-4 w-4 border-2 border-border bg-background hidden sm:block' />
+      {exp.current && (
+        <div className='absolute top-7 left-3 h-2 w-2 bg-primary hidden sm:block' />
+      )}
+
+      {/* Content */}
+      <div className='ml-0 sm:ml-12'>
+        <div className='border border-border bg-card p-4 sm:p-6'>
+          <div className='space-y-3 sm:space-y-4'>
+            {/* Header */}
+            <div className='space-y-1'>
+              <div className='flex flex-wrap items-start justify-between gap-2'>
+                <h3 className='text-base font-semibold text-foreground sm:text-lg'>
+                  {exp.title}
+                </h3>
+                {exp.current && (
+                  <span className='bg-primary px-2 py-1 text-xs font-medium text-primary-foreground'>
+                    Current
+                  </span>
+                )}
+              </div>
+              <div className='text-xs text-muted-foreground sm:text-sm'>
+                <a
+                  href={exp.companyUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='font-medium hover:underline'
+                >
+                  {exp.company}
+                </a>
+                {exp.internship && <> &bull; Internship</>} &bull; {exp.location}
+              </div>
+              <div className='text-xs text-muted-foreground sm:text-sm'>
+                {exp.period}
+              </div>
+            </div>
+
+            {/* Description */}
+            <div className='relative'>
+              <div
+                ref={contentRef}
+                className='space-y-2 overflow-hidden transition-[max-height] duration-300 ease-in-out'
+                style={{
+                  maxHeight:
+                    expanded || !showReadMore
+                      ? '2000px'
+                      : `${COLLAPSED_MAX_HEIGHT}px`,
+                }}
+              >
+                {exp.bullets.map((bullet, i) => (
+                  <div
+                    key={i}
+                    className='flex items-start text-xs leading-relaxed text-foreground sm:text-sm'
+                  >
+                    <span className='mt-0.5 mr-2 shrink-0 text-muted-foreground sm:mt-1'>
+                      &bull;
+                    </span>
+                    <span>{bullet}</span>
+                  </div>
+                ))}
+              </div>
+              {showReadMore && (
+                <button
+                  type='button'
+                  onClick={() => setExpanded((e) => !e)}
+                  className={cn(
+                    'focus-visible:ring-ring/50 mt-2 flex items-center gap-2 rounded-md py-2 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px]',
+                    'text-muted-foreground hover:text-foreground'
+                  )}
+                >
+                  {expanded ? 'Show less' : 'Show more'}
+                  <ChevronDownIcon
+                    className={cn(
+                      'size-4 shrink-0 transition-transform duration-200',
+                      expanded && 'rotate-180'
+                    )}
+                  />
+                </button>
+              )}
+            </div>
+
+            {/* Technologies */}
+            <div className='space-y-2'>
+              <h4 className='text-xs font-medium tracking-wide text-muted-foreground uppercase'>
+                Technologies
+              </h4>
+              <div className='flex flex-wrap gap-2'>
+                {exp.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className='bg-muted px-2 py-1 text-xs font-medium text-foreground'
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  );
+}
+
 export function Experience() {
   return (
     <section className='pt-8 pb-4 sm:pt-12 sm:pb-6'>
@@ -138,91 +258,13 @@ export function Experience() {
       </h2>
 
       <ul>
-        {experiences.map((exp, index) => {
-          const isLast = index === experiences.length - 1;
-          return (
-            <li key={index} className='relative my-6'>
-              {/* Timeline Line */}
-              {!isLast && (
-                <div className='absolute top-12 left-4 h-full w-px bg-border hidden sm:block' />
-              )}
-
-              {/* Timeline Dot */}
-              <div className='absolute top-6 left-2 h-4 w-4 border-2 border-border bg-background hidden sm:block' />
-              {exp.current && (
-                <div className='absolute top-7 left-3 h-2 w-2 bg-primary hidden sm:block' />
-              )}
-
-              {/* Content */}
-              <div className='ml-0 sm:ml-12'>
-                <div className='border border-border bg-card p-4 sm:p-6'>
-                  <div className='space-y-3 sm:space-y-4'>
-                    {/* Header */}
-                    <div className='space-y-1'>
-                      <div className='flex flex-wrap items-start justify-between gap-2'>
-                        <h3 className='text-base font-semibold text-foreground sm:text-lg'>
-                          {exp.title}
-                        </h3>
-                        {exp.current && (
-                          <span className='bg-primary px-2 py-1 text-xs font-medium text-primary-foreground'>
-                            Current
-                          </span>
-                        )}
-                      </div>
-                      <div className='text-xs text-muted-foreground sm:text-sm'>
-                        <a
-                          href={exp.companyUrl}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                          className='font-medium hover:underline'
-                        >
-                          {exp.company}
-                        </a>
-                        {exp.internship && <> &bull; Internship</>} &bull;{' '}
-                        {exp.location}
-                      </div>
-                      <div className='text-xs text-muted-foreground sm:text-sm'>
-                        {exp.period}
-                      </div>
-                    </div>
-
-                    {/* Description */}
-                    <div className='space-y-2'>
-                      {exp.bullets.map((bullet, i) => (
-                        <div
-                          key={i}
-                          className='flex items-start text-xs leading-relaxed text-foreground sm:text-sm'
-                        >
-                          <span className='mt-0.5 mr-2 shrink-0 text-muted-foreground sm:mt-1'>
-                            &bull;
-                          </span>
-                          <span>{bullet}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Technologies */}
-                    <div className='space-y-2'>
-                      <h4 className='text-xs font-medium tracking-wide text-muted-foreground uppercase'>
-                        Technologies
-                      </h4>
-                      <div className='flex flex-wrap gap-2'>
-                        {exp.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className='bg-muted px-2 py-1 text-xs font-medium text-foreground'
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          );
-        })}
+        {experiences.map((exp, index) => (
+          <ExperienceCard
+            key={index}
+            exp={exp}
+            isLast={index === experiences.length - 1}
+          />
+        ))}
       </ul>
     </section>
   );
