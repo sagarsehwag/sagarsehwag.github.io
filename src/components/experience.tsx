@@ -9,7 +9,7 @@ const COLLAPSED_MAX_HEIGHT = 192; // ~12rem in px
 
 const experiences = [
   {
-    title: 'Senior Software Engineer',
+    title: 'Lead Software Engineer',
     company: 'Simpplr',
     companyUrl: 'https://www.simpplr.com',
     location: 'Gurgaon',
