@@ -23,9 +23,7 @@ export function Hero() {
       <h1 className='mb-1 inline-block text-3xl font-bold sm:text-5xl'>
         Sagar Sehwag
       </h1>
-      <p className='text-muted-foreground'>
-        Lead Software Engineer @ Simpplr | Ex-Zomato
-      </p>
+      <p className='text-muted-foreground'>Frontend @ Simpplr | ex Zomato</p>
 
       <p>
         A Software Engineer specializing in the development of scalable web
